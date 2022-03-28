@@ -1,0 +1,24 @@
+.login_card {
+  width: 35%;
+  justify-self: center;
+  margin-left: 350px;
+  margin-top: 55px;
+  height: auto;
+  max-height: 490px;
+  border: 2px solid rgb(128, 147, 238);
+  box-shadow: 0px 0px 3px 0px rgb(0, 0, 0)
+}
+
+.login_card_div {
+  display: flex;
+  margin: 0px;
+  padding: 0px 5px 0px 105px;
+}
+
+.login_card_div h3 {
+  padding: 0px 60px;
+}
+h1{
+    text-align: center;
+    margin-top: 0px;
+}

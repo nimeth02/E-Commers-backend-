@@ -1,0 +1,134 @@
+/* .category_col_side {
+    float: top;
+    background-color: rgb(20, 33, 96);
+    height:auto;
+    min-height: 91vh;
+  } */
+  .product_col {
+    margin-top: 0px;
+    float: top;
+  }
+  .sidebar_div_product{
+    position: fixed;
+  }
+  .product_search{
+
+  }
+  .product_col_side {
+    float: top;
+    background-color: rgb(20, 33, 96);
+    height:auto;
+    min-height: 91vh;
+  }
+  .filter_div_product{
+    margin: 10px;
+  }
+  .filter_div_product button{
+    display: block;
+    margin:20px auto;
+    width: 140px;
+    max-height: 60px;
+  }
+  .checkbox_product_filter{
+    margin: auto;
+    color: azure;
+    margin-left: 60px;
+    margin-top: 15px;
+  }
+  .checkbox_div_product_filter{
+    display: block;
+    margin:40px auto;
+    color: azure;
+  }
+  .ant-slider-handle {
+    border-color: rgb(16, 16, 19) !important;
+    border-width: 2px;
+    background-color: #ffc53d;
+    width: 18px;
+    height: 15px;
+    /* --antd-wave-shadow-color: rgb(21, 100, 67) !important; */
+  }
+.switch_product{
+float: right;
+ 
+}
+.product_add_button{
+  margin: auto;
+  display: block;
+  max-width:120px;
+  margin-top:50px ;
+}
+
+/* /////////////////////////////content */
+.product_number_add{
+  margin: auto;
+ margin-top: 25px;
+  
+}
+.product_add_textarea{
+margin: auto;
+margin-top: 25px;
+width: 400px;
+}
+.product_add_description_text{
+  margin: auto;
+margin-top: 25px;
+}
+
+.productlist{
+  margin:40px 15px;
+
+}
+.product_list_img{
+ max-width:auto;
+ max-height: 115px;
+ text-align: center;
+ justify-content: center;
+ margin: auto;
+
+}
+.div_carousel{
+  background: #364d79;
+  color: #fff;
+  text-align: center;
+  height: 150px;
+ 
+
+
+}
+.h3_carousel{
+  background: #364d79;
+  color: #fff;
+  text-align: center;
+  height: 150px;
+  line-height: 160px;
+}
+.carousel_product{
+  width:200px;
+  text-align: center;
+}
+.product_details_in_panel{
+  margin:auto ;
+  margin-left:50px ;
+  margin-top: 0px;
+}
+.detail_div {
+display: inline;
+justify-items: space-between;
+}
+.detail_div_right {
+  display: inline;
+  margin-left: 400px;
+float: right;
+  }
+.detail_p{
+
+}
+.btn_product{
+margin:0 10px;
+}
+
+.img_list{
+  margin: 4px 0px;
+
+}

@@ -1,0 +1,18 @@
+.home_img{
+    text-align: center;
+    border-radius: 8px;
+    min-width: 50%;
+    max-width: 100%;
+    display: block;
+    margin:45px auto;
+    opacity: 0.8;
+    
+}
+
+.container{
+    text-align: center;
+    margin: 20px 300px;
+    min-width: 50%;
+    max-width: 100%;
+}
+

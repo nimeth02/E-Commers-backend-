@@ -1,0 +1,80 @@
+.category_col {
+  margin-top: 0px;
+  float: top;
+}
+.category_col_side {
+  float: top;
+  background-color: rgb(20, 33, 96);
+  height:auto;
+  min-height: 91vh;
+}
+/* .category_search {
+} */
+.category_tree {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.category_tree:nth-child(1) {
+  color: rgb(20, 33, 96);
+}
+.category_tree h2 {
+    color: rgb(17, 51, 226);
+}
+.category_tree h1 {
+  text-transform: uppercase;
+}
+.category_add_button {
+display: block;
+max-width: 140px;
+margin: auto;
+margin-top: 20px;
+height: 38px;
+max-height: 45px;
+border-radius: 10px;
+}
+.category_delete_button {
+  display: block;
+  /* background-color:red; */
+  max-width: 140px;
+  margin: auto;
+  max-height: 45px;
+  height: 35px;
+  margin-top: 30px;
+  border-radius: 10px;
+  }
+  .category_update_button {
+    display: block;
+    background-color:orange;
+    max-width: 140px;
+    max-height: 45px;
+    margin: auto;
+    margin-top: 30px;
+    height: 35px;
+    border-radius: 10px;
+    }
+    .category_update_button:hover {
+  
+      background-color:orange;
+    
+      }
+      .category_update_button:active {
+  
+        background-color:orange;
+      
+        }
+        .category_update_button:visited {
+  
+          background-color:orange;
+        
+          }
+          .category_update_button:link {
+  
+            background-color:orange;
+          
+            }
+  
+
+    .category_button_grop{
+      
+      justify-content: center;
+    }

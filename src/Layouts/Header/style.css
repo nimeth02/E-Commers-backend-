@@ -1,0 +1,88 @@
+.nav_icon {
+  padding: 0px 14px 0px 0px;
+}
+
+.nav_item_home {
+  width: 17%;
+  font-size: 20px;
+  text-align: center;
+}
+.nav_menu {
+  background-color: rgb(20, 33, 96);
+  height: 9vh;
+}
+.nav_item {
+  font-size: 16px;
+  width: 10%;
+  color: rgb(249, 249, 250);
+  text-align: center;
+}
+
+.nav_item_profile {
+  font-size: 16px;
+  border-bottom: 2px solid transparent !important;
+  color: rgb(249, 249, 250);
+  color: inherit !important;
+}
+
+.nav_link {
+  color: rgb(253, 253, 253) !important;
+}
+
+.ant-menu-item-selected {
+  background-color: rgb(249, 249, 250);
+}
+.ant-menu-item-selected .nav_link {
+  color: rgb(4, 14, 48) !important;
+}
+
+.ant-menu-item:hover {
+  background-color: #ffffff !important;
+}
+.ant-menu-item:hover .nav_link {
+  color: rgb(4, 14, 48) !important;
+}
+
+.avatar_icon {
+    margin-left: 15px;
+    float: left;
+}
+.form_profile{
+margin-top: 55px;
+}
+.site-description-item-profile-wrapper{
+ margin-bottom:20px;
+}
+.site-description-item-profile-p-label{
+
+}
+.description{
+    margin-top: 40px;
+}
+/* #profile_name{
+   margin-right: 200px;
+} */
+
+#lgout{
+    margin-top: 10px;
+    float: right;
+    margin-left: 50px;
+ }
+ #up{
+    margin-top: 40px;
+    margin-left: 100px;
+    
+ }
+ .update_form{
+   margin:10px;
+margin-top:70px;
+ }
+ .btn_pro {
+   margin:0px 20px;
+   margin-top: 70px;
+   justify-content: space-between;
+ }
+ .btn_pro button{
+ margin:0px 20px;  
+ 
+}
