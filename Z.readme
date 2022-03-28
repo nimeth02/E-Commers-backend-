@@ -1,0 +1,10 @@
+1)controller userAdmin =>signin=> 49,50 
+    => give user data in signin api OR not
+2)controller userAdmin => logout
+    => check db for user OR not
+3)when cookie not found sever crashed    
+4)when delete category cant check any other checkboxes
+5)onchange e shloul make
+    => correct ts type
+6)miss spelling categorytID 
+    => categoryId (backend,frontend)    
