@@ -2,6 +2,7 @@ const { findOne } = require("../models/product");
 const Product = require("../models/product");
 const { resErr } = require("./ErrorHandle/res.error");
 const { resSucc_data } = require("./successHandle.js/res.success");
+const logger =require('../config/logger')
 
 exports.createproduct=(req,res)=>{
     console.log('add product');
@@ -42,7 +43,7 @@ exports.getproduct=(req,res)=>{
         Product.find().select('_id name description price quantity productImage')
         .populate('categorytId','_id name').exec((err,data)=>{
             if(err)resErr(res,400,err)
-            if(data) console.log(data); resSucc_data(res,200,data)
+            if(data) resSucc_data(res,200,data)
         })
     } catch (error) {
         resErr(res,400,error)
@@ -63,7 +64,7 @@ exports.editproduct=async(req,res)=>{
           
         }
         let pImg
-        const product=await Product.findOne({_id:req.params.id})
+        const product=await Product.findOne({_id:req.params.id}).populate('categorytId','_id name')
         // .exec((err,data)=>{
         //     console.log(data.productImage);
         // })
@@ -91,19 +92,24 @@ exports.editproduct=async(req,res)=>{
         product.productImage=productImages
         product.productImage=product.productImage.concat(pImg)
         console.log('pImg=',pImg,'productImages=',productImages,product);
-        product.save((err,data)=>{
+       await product.save((err,data)=>{
             if(err)resErr(res,400,err)
-            if(data) console.log(data); resSucc_data(res,200,data)
+            if(data){ 
+               // const {updatedAt,createdAt,...data}=pdata
+                console.log(data); resSucc_data(res,200,data)}
         })
 
     } catch (error) {
         resErr(res,400,error)
     }
 }
-exports.deleteproduct=(req,res)=>{
+exports.deleteproduct=async(req,res)=>{
     console.log('delete product');
     try {
-        
+        await Product.findOneAndDelete({_id:req.params.id}).exec((err,data)=>{
+            if(err)resErr(res,400,err)
+            if(data)console.log(data); resSucc_data(res,200,data)
+        })
     } catch (error) {
         resErr(res,400,error)
     }

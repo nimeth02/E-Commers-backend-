@@ -1,9 +1,11 @@
+const logger=require('./config/logger')
 const express=require('express')
 const app=express()
 const path =require('path')
 const mongoose=require('mongoose')
 const cors=require('cors')
 const cookieParser=require('cookie-parser')
+
 
 require('dotenv').config()
 
@@ -44,6 +46,8 @@ const category=require('./router/category')
 app.use('/category',category)
 const product=require('./router/product')
 app.use('/product',product)
+const sell=require('./router/sell')
+app.use('/sell',sell)
 
 
 //listen port 
@@ -51,6 +55,6 @@ const port=process.env.PORT || 6001
 
 app.listen(port,(err)=>{
     if(!err){  
-    console.log(`sever listened  ${port}`)
+        logger.info(`sever listened  ${port}`)
     }
 })

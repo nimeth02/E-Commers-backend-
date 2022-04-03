@@ -104,7 +104,7 @@ exports.update = async (req, res) => {
     await user.save((err,data)=>{
         if (err) resErr(res, 400, err);
           if (data) {
-              const {password,role,updatedAt,createdAt,...userdata}=data.toJSON()
+              const {password,updatedAt,createdAt,...userdata}=data.toJSON()
               resSucc_data(res, 201,userdata );}
     })
       
