@@ -51,7 +51,7 @@ app.use('/sell',sell)
 
 
 //listen port 
-const port=process.env.PORT || 6001
+const port=process.env.PORT || 6002
 
 app.listen(port,(err)=>{
     if(!err){  
