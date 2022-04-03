@@ -1,12 +1,13 @@
 import {  Card, Carousel, Col, Collapse, Divider, List, Row } from "antd";
 import React, { useState } from "react";
 import Button from "antd-button-color"
-import { useAppSelector } from "../../../app/hook";
-import { product_add_Interface } from "../../../Interfaces/productInterface";
-import { pictureurl } from "../../../config/url.config";
-import EditProduct from "./Edit.product";
-import DeleteProduct from "./Delete.products";
-const ProductCard = () => {
+import { useAppSelector } from "../../../../app/hook";
+import { product_add_Interface } from "../../../../Interfaces/productInterface";
+import { pictureurl } from "../../../../config/url.config";
+import EditProduct from "../Edit.product";
+import DeleteProduct from "../Delete.products";
+import Onecard from "./Onecard";
+const ProductCardAll = () => {
   const { Panel } = Collapse;
 
   const products = useAppSelector((state) => state.products);
@@ -16,9 +17,11 @@ const ProductCard = () => {
   return (
     <div>
       {products.products.map((product, i) => {
+      
         return (
           <div key={product._id} >
-            <Collapse accordion>
+            <Onecard product={product}/>
+            {/* <Collapse accordion>
               <Panel header={<Row style={{width:"100%"}}><Col span={20}><h3>{product.name} </h3></Col><Col span={4}><div >Rs:{product.price}</div></Col></Row>} key="1">
                 <Row>
                 <Col >
@@ -58,7 +61,7 @@ const ProductCard = () => {
                 </Col>
                 </Row>
               </Panel>
-            </Collapse>
+            </Collapse> */}
           </div>
         );
       })}
@@ -68,4 +71,4 @@ const ProductCard = () => {
   );
 };
 
-export default ProductCard;
+export default ProductCardAll;

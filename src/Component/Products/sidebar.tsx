@@ -3,7 +3,7 @@ import React from 'react'
 const { Search } = Input;
 
 const Sidebar = () => {
-const color="red"
+
   return (
     
     

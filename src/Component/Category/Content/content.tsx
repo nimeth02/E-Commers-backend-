@@ -32,9 +32,13 @@ const Content = () => {
     if(!categories.isupdated){
       console.log('content get and updated category changes'); 
       dispatch(categories_get());
-      setupdatecheck(initial_categorye)
+     // setupdatecheck(initial_categorye)
+     console.log(updatecheck);
+     
     }
-   
+    console.log('after',updatecheck);
+    
+     setupdatecheck(initial_categorye)
   }, [categories.isupdated,dispatch]);
 
    //get main category to bold
@@ -104,10 +108,11 @@ const Content = () => {
         <Col span={15}>
         <div className="content_category">
      
-     <Tree
+       { categories.isupdated ? <Tree
        className="category_tree"
        checkable
       //  onSelect={onSelect}
+      defaultCheckedKeys={[]}
       defaultExpandParent={true}
        onCheck={onCheck}
        treeData={categorylist}
@@ -115,6 +120,7 @@ const Content = () => {
       
       
      />
+      : null }
    </div></Col>
         <Col span={9} className="category_button_grop">
         <Button type="primary" className="category_add_button"

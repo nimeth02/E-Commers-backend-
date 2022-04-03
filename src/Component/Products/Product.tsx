@@ -5,6 +5,7 @@ import { Col, Row } from 'antd'
 import Content from './Content/content'
 import { useAppDispatch } from '../../app/hook'
 import { product_get } from '../../features/productslice'
+import { categories_get } from '../../features/categoryslice'
 
 
 const Product = () => {
@@ -13,7 +14,7 @@ const Product = () => {
    console.log('product useEffect');
    
       dispatch(product_get());
-     
+      dispatch(categories_get());
    
    
   }, []);

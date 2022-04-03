@@ -19,6 +19,7 @@ function Navbar() {
     setvisible(true)
     
   }
+ 
   return (
     <>
       <Menu
@@ -26,6 +27,7 @@ function Navbar() {
         style={{ width: "100%", paddingRight: "15px" }}
         // defaultSelectedKeys={["1"]}
         // defaultOpenKeys={["sub1"]}
+      
         mode={"horizontal"}
         
       >       

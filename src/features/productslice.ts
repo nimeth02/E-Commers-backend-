@@ -37,30 +37,23 @@ import { add_product, productInterface, product_add_Interface, product_initial }
   export const product_add = createAsyncThunk('product_add', async (form:any) => {
     console.log('product_add',form)
       const res=await axios.post('http://localhost:4020/product/create',form,{ withCredentials: true })
-    console.log(res);
-    
-      console.log('add data',res.data)   
+      console.log(res.data)  
+      return res.data.data 
           
   })
   export const products_update = createAsyncThunk('products_update', async ({form,_id}:{form:any,_id:string}) => {
     console.log('products_update',form)
       const res=await axios.put(`http://localhost:4020/product/update/${_id}`,form,{ withCredentials: true })
     
-      console.log(res.data)   
-          
+      console.log(res.data)
+      return res.data.data  
   })
-//   export const categories_delete = createAsyncThunk('categories_delete', async ({_id}:delete_interface) => {
-//     console.log('categories_update')
-//       const res=await axios.delete(`http://localhost:4020/category/delete/${_id}`,{ withCredentials: true })
-//       if(res.status == 201){
-//         addcategory_succ()
-//       }
-//       else{
-//         addcategory_err()
-//       }
-//       console.log(res.data)   
-          
-//   })
+  export const product_delete = createAsyncThunk('product_delete', async (_id:string) => {
+    console.log('product_delete')
+      const res=await axios.delete(`http://localhost:4020/product/delete/${_id}`,{ withCredentials: true })
+      console.log(res.data)   
+          return res.data.data._id
+  })
   
   
   
@@ -77,7 +70,7 @@ import { add_product, productInterface, product_add_Interface, product_initial }
         
       })
       builder.addCase(product_add.fulfilled,(state,action)=>{
-        // state=action.payload
+         state.products.push(action.payload)
     
       
       })
@@ -94,26 +87,37 @@ import { add_product, productInterface, product_add_Interface, product_initial }
       builder.addCase(product_get.rejected,(state,action)=>{
        
        })
-    //   builder.addCase(categories_update.pending,(state,action)=>{
+      builder.addCase(products_update.pending,(state,action)=>{
         
-    //   })
-    //   builder.addCase(categories_update.fulfilled,(state,action)=>{
-    //     state.isupdated=false
+      })
+      builder.addCase(products_update.fulfilled,(state,action)=>{
+        state.products=state.products.map((product)=>{if(product._id == action.payload._id){
+          console.log('if',action.payload,product);
+          //state.products.push(action.payload)
+          return action.payload
+        }
+      else{
+        console.log('else');
+        return product
+      }})
       
-    //   })
-    //   builder.addCase(categories_update.rejected,(state,action)=>{
+      console.log(state.products);
+      
+      })
+      builder.addCase(products_update.rejected,(state,action)=>{
        
-    //   })
-    //   builder.addCase(categories_delete.pending,(state,action)=>{
+      })
+      builder.addCase(product_delete.pending,(state,action)=>{
         
-    //   })
-    //   builder.addCase(categories_delete.fulfilled,(state,action)=>{
-    //     state.isupdated=false
-      
-    //   })
-    //   builder.addCase(categories_delete.rejected,(state,action)=>{
+      })
+      builder.addCase(product_delete.fulfilled,(state,action)=>{
+        state.products=state.products.filter((product)=>{if(product._id != action.payload){
+          return product
+        }})
+      })
+      builder.addCase(product_delete.rejected,(state,action)=>{
        
-    //   })
+      })
     }
   })
   

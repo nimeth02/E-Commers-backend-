@@ -10,6 +10,7 @@ import Formitem from "../../Login/Formitem";
 import { Alert, Button, Space } from "antd";
 import { categories_add, categories_update } from "../../../features/categoryslice";
 import { DownCircleFilled, DownCircleTwoTone, InfoCircleOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 interface update_category {
   update_visible: boolean;
@@ -24,7 +25,7 @@ const Updatecategory = ({
 }: update_category) => {
   console.log('%cupdate category','color:red');
   console.log(updatecheck);
-  
+  const navigate=useNavigate()
   const categories = useAppSelector((state) => state.categories);
   const dispatch = useAppDispatch()
 

@@ -1,18 +1,119 @@
-.home_img{
-    text-align: center;
+/* .home_img{
+    text-align: center; 
     border-radius: 8px;
     min-width: 50%;
-    max-width: 100%;
+    max-width: 90%;
     display: block;
     margin:45px auto;
     opacity: 0.8;
+   
+} */
+
+/* .container{
+    text-align: center; 
+    margin: 20px 0px;
+    min-width: 50%;
+    max-width: 100%;
+} */
+
+/* .dashboard:before{
+    background-image: url('./landing_00-720x379.jpg');
+    min-width: 50%;
+    max-width: 90%;
+    margin:45px auto;
+    border-radius: 8px;
+    opacity: 0.1;
+    position: absolute;
+} */ 
+.Addsell_form{
+    /* display: flex;
+    justify-content: center; */
+    margin: 10% 5% 0% 5%; 
+  
+}
+
+.Addsell {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-left: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.Addsell::before {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: 0%;
+    bottom: 0%;
+    left:  10%;
+    border-radius: 8px;
+
+
+    background-image: url(
+        './landing_00-720x379.jpg');
+    background-size: cover;
+
+    opacity: 0.1;
+}
+
+.selldiv{
+    height: 240px;
+    /* margin:0 10% ; */
+    width:90%;
+    margin: auto;
+    overflow: auto;
+   
+}
+
+.sell_divider{
+    color: red;
+    background-color: rgb(15, 55, 173);
     
 }
 
-.container{
-    text-align: center;
-    margin: 20px 300px;
-    min-width: 50%;
-    max-width: 100%;
+.sell_list_title{
+    display: flex;
+    justify-content: space-between;
+}
+.sell_list_description{
+    display: flex;
+    justify-content: space-between;
+}
+/* purchase */
+.Purches_form{
+    /* display: flex;
+    justify-content: center; */
+    margin: 5% 5% 5% 5%; 
+  
+}
+.Purches {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    align-items: center;
+    justify-content: center;
 }
 
+.Purches::before {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    bottom: 45%;
+    left:  5%;
+    border-radius: 8px;
+
+
+    background-image: url(
+        './landing_00-720x379.jpg');
+    background-size: cover;
+
+    opacity: 0.05;
+}

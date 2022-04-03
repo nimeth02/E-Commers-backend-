@@ -1,6 +1,7 @@
 import { SettingOutlined, UserOutlined } from "@ant-design/icons";
 import { Avatar, Button, Divider, Drawer} from "antd";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
 import Formitem from "../../Component/Login/Formitem";
 import { Admin_user_logout, Admin_user_update } from "../../features/userslice";
@@ -30,6 +31,8 @@ const Profile = ({ visible, setvisible }: profile) => {
   let { name, mobilenumber, password, confirm_password } = profile;
   const [set, setset] = useState(false);
 
+const navigate=useNavigate()
+
   const onsettings = () => {
     setset(true);
     setprofile({...profile,name:user.user.name,mobilenumber:user.user.mobilenumber})
@@ -37,6 +40,7 @@ const Profile = ({ visible, setvisible }: profile) => {
   const onlogout =()=>{
     dispatch(Admin_user_logout())
     setvisible(false);
+    navigate("/")
   }
   const onupdate=()=>{
     if( name === '' || mobilenumber === '') {

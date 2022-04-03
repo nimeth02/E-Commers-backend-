@@ -30,7 +30,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/product" element={<PrivateRoutes  permition={'admin'}>
+          <Product />
+              </PrivateRoutes>} />
           {/* <Route path="/category" element={<Category />} /> */}
           <Route path="/Supplier" element={<Supplier />} />
           <Route path="/login" element={<Login />} />
@@ -38,8 +40,8 @@ function App() {
           <Route
             path="/category"
             element={
-              <PrivateRoutes>
-                <Category />
+              <PrivateRoutes  permition={'super_admin'}>
+                <Category/>
               </PrivateRoutes>
             }
           />

@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Input } from "antd";
 
 interface form {
-  type: string;
+  type: string| number;
   label?:string
   onchange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 

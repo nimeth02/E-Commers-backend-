@@ -83,7 +83,8 @@ export const userSlice = createSlice({
       
     })
     builder.addCase(Admin_user_logout.fulfilled,(state,action)=>{
-      state.Authed_admin=false
+       state.Authed_admin=false
+      state.user=initialState.user
     
     })
     builder.addCase(Admin_user_update.rejected,(state,action)=>{

@@ -95,7 +95,7 @@ const image_delete=(_id:string)=>{
     console.log(form,productImage);
     const _id=product._id
     dispatch(products_update({form,_id}))
-
+    setvisible_edit(false)
   };
 
   return (

@@ -53,10 +53,12 @@ const Signup = (props:p) => {
     }
   try {
     const res=await axios.post('http://localhost:4020/userAdmin/signup',user)
-    console.log(res.status,res);
+    console.log(res);
     if(res.status == 201){
       opensignup(email)
       props.setlogin(true)
+    }else{
+      //openfillerror(res.message)
     }
     
   } catch (error) {

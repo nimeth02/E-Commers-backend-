@@ -9,13 +9,13 @@ export const type_email=(email:string)=>{
 }
 
 export const match_password=(password:string,con_password:string)=>{ 
-    console.log(password,con_password);
+    //console.log(password,con_password);
      
     if(password == con_password ) {return true}
     else{return false}
 }
 export const mobile_char=(mobilenumber:string)=>{ 
-    console.log(mobilenumber);
+   // console.log(mobilenumber);
      
     if(mobilenumber.length != 10 ) {return true}
     else{return false}
