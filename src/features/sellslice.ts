@@ -12,7 +12,7 @@ const initialState:sell_list_I={
 }
   
 export const product_get = createAsyncThunk('product_get', async () => {
-    console.log('products')
+    console.log('product')
       const res=await axios.get('http://localhost:4020/product/get',{ withCredentials: true })
      // console.log(res.data.data);
       return res.data.data
