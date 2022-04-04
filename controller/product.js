@@ -7,7 +7,7 @@ const logger =require('../config/logger')
 exports.createproduct=(req,res)=>{
     console.log('add product');
     try {
-        const{name,quantity,price,description,select}=req.body
+        const{name,quantity,price,description,select,productId}=req.body
        // console.log(req.files);
         let productImage=[]
         if(req.files.length >0){
@@ -20,6 +20,7 @@ exports.createproduct=(req,res)=>{
         }
         const product =new Product({
             name,
+            productId,
             quantity,
             description,
             price,
@@ -40,7 +41,7 @@ exports.createproduct=(req,res)=>{
 exports.getproduct=(req,res)=>{
     console.log('get product');
     try {
-        Product.find().select('_id name description price quantity productImage')
+        Product.find().select('_id name description price quantity productImage productId')
         .populate('categorytId','_id name').exec((err,data)=>{
             if(err)resErr(res,400,err)
             if(data) resSucc_data(res,200,data)
@@ -126,6 +127,19 @@ exports.filterproduct=(req,res)=>{
     console.log('filter product');
     try {
         
+    } catch (error) {
+        resErr(res,400,error)
+    }
+}
+
+exports.get_one_product=(req,res)=>{
+    console.log('get one product');
+    try {
+        Product.findOne({productId:req.body.productId}).select('_id name productId  price ')
+        .exec((err,data)=>{
+            if(err)resErr(res,400,err)
+            if(data) console.log(data); resSucc_data(res,200,data)
+        })
     } catch (error) {
         resErr(res,400,error)
     }

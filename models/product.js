@@ -7,6 +7,11 @@ const productschema = new mongoose.Schema(
       required:true,
       unique:true,
     },
+    productId:{
+      type: String,
+      required:true,
+      unique:true,
+    },
     quantity: {
       type: Number,
     },
