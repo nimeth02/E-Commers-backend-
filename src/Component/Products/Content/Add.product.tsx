@@ -28,6 +28,7 @@ interface addproduct {
 }
 const initialproduct: productInterface = {
   name: "",
+  productId:"",
   quantity: 0,
   description: "",
   price: 0,
@@ -42,7 +43,7 @@ const AddProduct = ({ addvisible, setaddvisible }: addproduct) => {
 
   const [productimage, setproductimage] = useState<File[]>([]);
   const [product, setproduct] = useState(initialproduct);
-  const { name, quantity, description, price, select } = product;
+  const { name, quantity, description, price, select ,productId} = product;
 
   const onchange = (e: any) => {
     console.log(e.target.name);
@@ -91,6 +92,7 @@ const AddProduct = ({ addvisible, setaddvisible }: addproduct) => {
     // console.log(product,productimage);
     const form =new FormData()
     form.append('name',name)
+    form.append('productId',productId)
     form.append('quantity',String(quantity))
     form.append('select',select)
     form.append('price',String(price))
@@ -120,9 +122,15 @@ console.log(form);
         <Form>
           <Form.Item
             label="Name"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: "Please input your name!" }]}
           >
             <Input name="name" value={name} onChange={onchange} />
+          </Form.Item>
+          <Form.Item
+            label="ProductId"
+            rules={[{ required: true, message: "Please input your ProductId!" }]}
+          >
+            <Input name="productId" value={productId} onChange={onchange} />
           </Form.Item>
           <Divider />
           Select Category :

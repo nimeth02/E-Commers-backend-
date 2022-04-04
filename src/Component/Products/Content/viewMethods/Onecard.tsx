@@ -22,7 +22,7 @@ const Onecard = ({product}:onecard) => {
     <div>  
           <div key={product._id} >
             <Collapse accordion>
-              <Panel header={<Row style={{width:"100%"}}><Col span={20}><h3>{product.name} </h3></Col><Col span={4}><div >Rs:{product.price}</div></Col></Row>} key="1">
+              <Panel header={<Row style={{width:"100%"}}><Col span={10}><h3>{product.name} </h3></Col><Col span={10}>#{product.productId} </Col><Col span={4}><div >Rs:{product.price}</div></Col></Row>} key="1">
                 <Row>
                 <Col >
                 {product.productImage && product.productImage.length > 0 ? (

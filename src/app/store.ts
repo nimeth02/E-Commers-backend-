@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import userReducer from '../features/userslice'
 import categoriesReducer from '../features/categoryslice'
 import productReducer from '../features/productslice'
-import sellReducer from '../features/productslice'
+import sellReducer from '../features/sellslice'
 export const store = configureStore({
   reducer: {
     user: userReducer,

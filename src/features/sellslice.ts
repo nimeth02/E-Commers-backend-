@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import  axios  from 'axios'
 import type { RootState } from '../app/store'
+import { sell_add_I, sell_list_I } from '../Interfaces/sellInterface'
 import { updateprofile } from '../Interfaces/userInterface'
 
 
 
-const initialState={
-   
+const initialState:sell_list_I={
+   sell_product_list:[]
 
 }
   
@@ -18,10 +19,11 @@ const initialState={
    
     
 //   })
-  export const sell_adding = createAsyncThunk('sell_adding', async () => {
-    console.log('sell_adding')
-      const res=await axios.post('http://localhost:4020/product/create',{ withCredentials: true })
-      console.log(res.data)  
+  export const sell_adding = createAsyncThunk('sell_adding', async ({productId,quantity}:sell_add_I) => {
+    console.log('sell_adding',productId,quantity)
+      const res=await axios.post('http://localhost:4020/product/getone',{productId},{ withCredentials: true })
+      console.log(res.data.data) 
+      res.data.data.quantity=quantity 
       return res.data.data 
           
   })
@@ -39,7 +41,7 @@ export const sellSlice = createSlice({
       
     })
     builder.addCase(sell_adding.fulfilled,(state,action)=>{
-     
+      state.sell_product_list.push(action.payload)
     })
     builder.addCase(sell_adding.rejected,(state,action)=>{
     })

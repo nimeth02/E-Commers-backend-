@@ -1,5 +1,6 @@
 export interface productInterface{
 name:string
+productId:string
 quantity:number
 description:string
 price:number
@@ -9,6 +10,7 @@ select:string
 export interface product_add_Interface{
     _id:string
     name:string
+    productId:string
     quantity:number
     description:string
     price:number
