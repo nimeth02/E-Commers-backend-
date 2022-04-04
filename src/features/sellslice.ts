@@ -11,14 +11,14 @@ const initialState:sell_list_I={
 
 }
   
-// export const product_get = createAsyncThunk('product_get', async () => {
-//     console.log('products')
-//       const res=await axios.get('http://localhost:4020/product/get',{ withCredentials: true })
-//      // console.log(res.data.data);
-//       return res.data.data
+export const product_get = createAsyncThunk('product_get', async () => {
+    console.log('products')
+      const res=await axios.get('http://localhost:4020/product/get',{ withCredentials: true })
+     // console.log(res.data.data);
+      return res.data.data
    
     
-//   })
+  })
   export const sell_adding = createAsyncThunk('sell_adding', async ({productId,quantity}:sell_add_I) => {
     console.log('sell_adding',productId,quantity)
       const res=await axios.post('http://localhost:4020/product/getone',{productId},{ withCredentials: true })
