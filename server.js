@@ -54,7 +54,7 @@ const employee=require('./router/employeeAdmin')
 app.use('/employee',employee)
 
 
-//listen port 
+//listen to port 
 const port=process.env.PORT || 6002
 
 app.listen(port,(err)=>{
