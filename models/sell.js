@@ -14,7 +14,7 @@ const sellschema = new mongoose.Schema(
     sellreport: [
       {
         quantity:{type:Number},
-        productId:{
+        product_Id:{
             type:mongoose.Schema.Types.ObjectId,
             ref:'Product'
            

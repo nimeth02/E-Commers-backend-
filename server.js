@@ -48,6 +48,10 @@ const product=require('./router/product')
 app.use('/product',product)
 const sell=require('./router/sell')
 app.use('/sell',sell)
+const supplier=require('./router/supplier')
+app.use('/supplier',supplier)
+const employee=require('./router/employeeAdmin')
+app.use('/employee',employee)
 
 
 //listen port 

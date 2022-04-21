@@ -20,10 +20,10 @@ const storage = multer.diskStorage({
 
  router.post('/create',require_auth,isAdmin,upload.array('productimage'),createproduct)
  router.put('/update/:id',require_auth,isAdmin,upload.array('productimage'),editproduct)
-router.get('/get',getproduct)
+router.post('/get',getproduct)
 router.post('/getone',get_one_product)
 router.delete('/delete/:id',require_auth,isAdmin,deleteproduct)
 router.post('/search',searchproduct)
-router.post('/filter',filterproduct)
+//router.post('/filter',filterproduct)
 
 module.exports = router

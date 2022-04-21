@@ -21,7 +21,7 @@ const getcategorylistextend=(data,parentId=null)=>{
             parentId:i.parentId,
             children:getcategorylistextend(data,i._id)
         })
-        console.log('push',i.name)
+       // console.log('push',i.name)
 
     }
     return categorylistextend
